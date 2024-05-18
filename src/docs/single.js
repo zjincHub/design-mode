@@ -1,0 +1,1 @@
+const code = "<template>\r\n  <div>aaaaa</div>\r\n</template>\r\n";export default code;

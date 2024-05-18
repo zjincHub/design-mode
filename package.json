@@ -10,11 +10,11 @@
     "build-only": "vite build",
     "type-check": "vue-tsc --build --force",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
-    "format": "prettier --write src/"
+    "format": "prettier --write src/",
+    "doc:build": "node ./scripts/build-docs.js"
   },
   "dependencies": {
-    "@highlightjs/vue-plugin": "^2.1.0",
-    "highlight.js": "^11.9.0",
+    "prismjs": "^1.29.0",
     "vue": "^3.4.21"
   },
   "devDependencies": {
@@ -31,6 +31,7 @@
     "prettier": "^3.2.5",
     "typescript": "~5.4.0",
     "vite": "^5.2.8",
+    "vite-plugin-prismjs": "^0.0.11",
     "vue-tsc": "^2.0.11"
   }
 }

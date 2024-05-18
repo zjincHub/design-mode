@@ -4,6 +4,6 @@ import CodeLoader from './components/CodeLoader.vue'
 
 <template>
   <div>
-    <CodeLoader title="单例模式" path="./pages/single.ts" />
+    <CodeLoader title="单例模式" element="single" />
   </div>
 </template>

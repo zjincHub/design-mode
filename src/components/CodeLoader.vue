@@ -6,14 +6,14 @@ import DocumentationIcon from '@/components/icons/IconDocumentation.vue'
 
 const props = defineProps<{
   title: string
-  path: string
+  element: string
 }>()
 
 const code = ref('')
+let component: any = ref()
 async function load() {
-  const { play, codeString } = await import(props.path)
-  code.value = codeString
-  play()
+  component.value = await import(`../pages/${props.element}.vue`)
+  code.value = (await import(`../docs/${props.element}.js`)).default
 }
 
 load()
@@ -25,7 +25,7 @@ load()
       <DocumentationIcon />
     </template>
     <template #heading>{{ title }}</template>
-    <CodeDisplayer language="typescript" :code="code" />
+    <component :is="component?.default"></component>
+    <CodeDisplayer language="markup" :code="code" />
   </Anchor>
 </template>
-..
